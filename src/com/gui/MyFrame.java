@@ -35,7 +35,7 @@ public class MyFrame extends JFrame {
             while (true) {
                 gameField.play();
 
-                score.setText("Current score: " + ((double) gameField.clicked.size() / ((double) (gameField.rects.size() + gameField.clicked.size()))) * 100 + "%");
+                score.setText("Current score: " + (int)(((double) gameField.clicked.size() / ((double) (gameField.rects.size() + gameField.clicked.size())))) * 100 + "%");
                 try {
                     Thread.sleep((int) (Math.random() * 1500) + 500);
                 } catch (InterruptedException e) {
@@ -53,7 +53,7 @@ public class MyFrame extends JFrame {
                     if ((e.getX() >= gameField.rects.get(i).x && e.getX() <= gameField.rects.get(i).x + 25) &&
                             (e.getY() >= gameField.rects.get(i).y && e.getY() <= gameField.rects.get(i).y + 25)) {
                         gameField.clicked.add(gameField.rects.remove(gameField.rects.indexOf(gameField.rects.get(i))));
-                        score.setText("Current score: " + ((double) gameField.clicked.size() / ((double) (gameField.rects.size() + gameField.clicked.size()))) * 100 + "%");
+                        score.setText("Current score: " + (int)(((double) gameField.clicked.size() / ((double) (gameField.rects.size() + gameField.clicked.size())))) * 100 + "%");
                     }
                 }
             }
